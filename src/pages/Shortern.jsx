@@ -15,14 +15,10 @@ function Shortern() {
       const handleButtonClick = async () => {
         try {
           const response = await axios.post('/createUrl', {
-            url: text  // This will include the text value in the request body as a variable named "url"
-            // Other data objects here
-           
+            url: text 
           });
-          // Handle the response data
           setCode(response.data.data)
         } catch (error) {
-          // Handle errors
         }
       };
     

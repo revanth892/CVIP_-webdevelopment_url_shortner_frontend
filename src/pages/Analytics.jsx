@@ -16,12 +16,11 @@ function Analytics() {
       const handleButtonClick = async () => {
         try {
           const response = await axios.get(`/analytics/${code}`)
-          // Handle the response data
 
           setAnalytics(response.data.data.total_clicks)
           setUrl(response.data.data.redirect_url)
         } catch (error) {
-          // Handle errors
+
         }
       };
     
