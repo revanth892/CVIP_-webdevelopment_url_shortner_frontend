@@ -3,7 +3,7 @@ import React from 'react'
 import { Box, TextField,Button,Typography} from '@mui/material';
 import { useState } from 'react';
 import axios from '../axios.js';
-
+import { Link } from 'react-router-dom';
 function Shortern() {
     const [text, setText] = useState('');
     const [code, setCode] = useState('');
@@ -53,7 +53,7 @@ function Shortern() {
                 variant="contained" color="primary" onClick={handleButtonClick}>Shorten Url</Button>
                 <Typography 
                 sx={{marginTop:'55px',marginBottom: '4px'}}
-                variant="body1" gutterBottom>Already have a code ? View Analytics</Typography>
+                variant="body1" gutterBottom>Already have a code ? <Link to="/analytics">View Analytics</Link></Typography>
             </Box>
             {code ? <div><Box sx={{display: 'flex', flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '275px',width:'700px'  }}><Typography>Your code is <b>${code}</b></Typography><Typography>Url: <b>http://localhost:8080/${code}</b></Typography> </Box></div> : <div></div>}
         </Box>

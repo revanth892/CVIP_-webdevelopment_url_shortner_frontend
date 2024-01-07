@@ -3,6 +3,7 @@ import React from 'react'
 import { Box, TextField,Button,Typography} from '@mui/material';
 import { useState } from 'react';
 import axios from '../axios.js';
+import { Link } from 'react-router-dom';
 
 function Analytics() {
     const [code, setCode] = useState('');
@@ -51,7 +52,7 @@ function Analytics() {
                 variant="contained" color="primary" onClick={handleButtonClick}>Get Analysis</Button>
                 <Typography 
                 sx={{marginTop:'55px',marginBottom: '4px'}}
-                variant="body1" gutterBottom>Want to Shorten a URL? Shortern Now</Typography>
+                variant="body1" gutterBottom>Want to Shorten a URL?<Link to="/">Shortern Now</Link></Typography>
             </Box>
             {analytics ? <div><Box sx={{display: 'flex', flexDirection: 'column',alignItems: 'center',justifyContent: 'center',height: '275px',width:'700px'  }}><Typography>Original Url: <b>{url}</b></Typography><Typography>The numbers of clicks <b>{analytics}</b></Typography> </Box></div> : <div></div>}
         </Box>
